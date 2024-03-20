@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=red]{hyperref}
+\usepackage[most, listings]{tcolorbox}
+\usepackage{verbatimbox}
+\usepackage{alltt}
+\usepackage{fancyvrb}
+
+\begin{document}
+
+\begin{center}
+\LARGE{Preguntas teóricas}    \\
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item ¿Qué es un condicional?
+
+\par\hspace{5pt} Un condicional, tal como su nombre lo sugiere, es un tipo de proposición que se utiliza en programación para el manejo de condiciones. En términos formales, para decirlo de alguna manera, dicho condicional se basa en la \emph{implicación} (p $\rightarrow$ q) de la lógica condicional: ``Sí p, entonces q'' (donde \emph{p} es la condición y \emph{q} la consecuencia). Ejemplo: ``Sí mañana llueve, no iré a la playa''.
+
+\par \hspace{5pt} Ahora bien, en \emph{python} así como en la mayoría de los programas de computación, las condiciones utilizdas no son como las del ejemplo anterior, sino más bien condiciones que involucran una relación entre dos términos o variables cualesquiera (\emph{a}, \emph{b})\footnote
+{
+La condición del ejemplo anterior, me parece que es más bien una condición \emph{fáctica}, en el sentido que depende de un hecho (y en particular de la experiencia de aquel hecho) para determinar su valor de verdad (si es verdadera o falsa).
+}.
+Algunos ejemplos de condiciones basadas en relaciones de términos o variables (que representan ideas) son los siguientes:
+
+\begin{itemize}
+\item ``\emph{a} es padre de \emph{b}'' (relación filial)
+\item ``\emph{a} $>$ \emph{b}'' (relación lógica)
+\item ``\emph{a} $\in$ \emph{b}'' (relación teoría de conjuntos)
+\end{itemize}
+
+calificarla como \emph{lógica} la distinguimos de otro tipo relaciones como podrían ser, entre otras, la relación de filiación (``\emph{a} es hijo de \emph{b}"), por ejemplo, o la de pertenencia (``\emph{a} pertenece a \emph{b}"), en la teoría de conjuntos.
+
+\par \hspace{0.5cm} A continuación presentamos los 6 tipos de condicionales que pueden ser utilizados en python\footnote
+{
+En relación a esto, véase, por ejemplo, \url{https://www.w3schools.com/python/python_conditions.asp}.
+}:
+
+\begin{itemize}
+\item igual: \textcolor{red}{a == b}
+\item 
+\end{itemize}
+
+\item ¿Cuáles son los diferentes tipos de bucles en Python? ¿Por qué son útiles?
+
+\par \hspace{5pt} En \emph{python} existen 2 grandes tipos de bucles o \emph{loops}: \emph{for} y \emph{while}.
+
+\begin{itemize}
+\item Bucle \emph{while}
+
+\par \hspace{5pt} Dicho tipo de bucle se caracteriza por ejecutar un código una y otra vez, hasta que la(s) condicion(es) especificada(s) sea(n) falsa(s). A continuación analizaremos algunos ejemplos para aclarar un poco más dicha caracterización.
+
+\begin{tcolorbox}
+\begin{alltt}
+a = \textcolor{purple}{1}
+while a < \textcolor{purple}{10}:
+print(\textcolor{red}{"¡Hola mundo!"})
+\end{alltt}        
+\end{tcolorbox}
+
+\par \hspace{5pt} Si ejecutamos este código, veremos que el programa imprimirá \emph{infinítamente} el mensaje que aparece ahí. ¿Por qué infinitamente? Básicamente, porque dicho código posee dos \emph{proposiciones} que de alguna manera no se ``cruzan'' nunca. Por un lado, una primera proposición que define el valor inicial de \verb|a| como una constante e igual a \verb|1|. Y por el otro lado, una proposición \emph{condicional} que plantea que, mientras \verb|a| sea menor que \verb|10|, se imprima el mensaje que aparece entre comillas.  Dado que \verb|a| es definida como una constante o una variable estática, es decir, que no varía su valor luego de cada bucle, \verb|a| nunca será mayor que \verb|10|, haciendo que el valor de verdad de dicha condición sea siempre verdadera.
+
+\par \hspace{5pt} Para que no suceda lo anterior, a saber, una iteración que tienda al infinito\footnote
+{
+Claramente un \emph{script} o código que ``dé vueltas en redondo'' presenta un error.
+},
+ es necesario que el bucle cuente con lo que se llama un \emph{contador}. Aquello permite que la variable se comporte de manera dinámica, aumentando o disminuyendo después de cada bucle.
+
+\begin{tcolorbox}
+\begin{alltt}
+a = \textcolor{purple}{1}
+while a < \textcolor{purple}{10}:
+    print(\textcolor{red}{"¡Hola mundo!"})
+    a = a + \textcolor{purple}{1}
+\end{alltt}        
+\end{tcolorbox}
+    
+
+
+
+\item Bucle \emph{for}
+\end{itemize}
+
+\item ¿Qué es una lista por comprensión en Python?
+
+\item ¿Qué es un argumento en Python?
+
+\item ¿Qué es una función Lambda en Python?
+
+\item ¿Qué es un paquete pip?
+
+\par \hspace{5pt} Se llama \emph{pip} en python a un ``sistema de gestion de paquetes''. Su función principal es instalar y administrar los paquetes existentes de \emph{python}. Dichos paquetes son obtenidos del \href{https://pypi.org/}{Python Package Index}, aunque es posible descargarlos de otros índices tambien\footnote
+{
+El índice de paquetes de Python (PyPI) es un gran repositorio de \emph{software} para el lenguaje de programación python.
+}.
+
+\par \hspace{5pt} Una de las grandes ventajas de \emph{pip} es la facilidad con la cual se pueden instalar y desinstalar los paquetes de software desde la ``línea de comandos'': basta con un simple comando como el siguiente para hacerlo:
+
+\begin{tcolorbox}
+\begin{alltt}
+\textcolor{brown}{C:>} py -m pip install nombre-paquete 
+\end{alltt}        
+\end{tcolorbox}
+    
+
+\par \hspace{5pt} Tal como está señalado en la \href{https://pip.pypa.io/en/stable/}{documentación} de \emph{pip}, para poder empezar a utilizarlo, es necesario tenerlo \emph{ya} instalado en nuestro sistema junto con \emph{python}. Podemos revisar si aquello es así a través de los siguientes comandos\footnote
+{
+Dependiendo del sistema operativo que tengamos en nuestro ordenador, sea Linux, MacOS o Windows, el comando empleado podrá variar un poco. En el siguiente cuadro  solo he colocado los comandos utilizados en Windows. 
+}:  
+
+\begin{tcolorbox}
+\begin{alltt}
+\textcolor{brown}{C:>} py --version
+\emph{Python 3.N.N}
+\textcolor{brown}{C:>} py -m pip --version
+\emph{pip X.Y.Z from ... (python 3.N.N)}
+\end{alltt}        
+\end{tcolorbox}
+
+\par \hspace{5pt} Ahora bien, en el caso que \emph{pip} no se encuentre ya instalado en su sistema, existen dos maneras de hacerlo:
+
+\begin{itemize}
+\item
+\begin{alltt}
+ensurepip
+\end{alltt}
+\item
+\begin{alltt}
+get-pip.py
+\end{alltt} 
+\end{itemize}
+
+\par \hspace{5pt} En el caso de utilizar \verb|get-pip.py|, es necesario ejecutar los dos siguientes pasos:
+\begin{itemize}
+\item Descargar el \emph{script} desde \href{https://bootstrap.pypa.io/get-pip.py}{https://bootstrap.pypa.io/get-pip.py}.
+\item Abrir el terminal, luego \verb|cd| a la carpeta que contiene el archivo recién descargado \verb|get-pip.py|, y finalmente ejecutar:
+\begin{tcolorbox}
+\begin{alltt}
+\textcolor{brown}{C:>} py get-pip.py
+\end{alltt}        
+\end{tcolorbox}
+\end{itemize}
+
+\par \hspace{5pt} Una vez \emph{ya} instalado el programa \emph{pip} en nuestro sitema, podemos entonces comenzar a descargar los distintos paquetes que necesitemos mediante el comando inicial.
+
+\end{enumerate}
+
+\end{document}
