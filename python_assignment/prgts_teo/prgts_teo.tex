@@ -28,40 +28,43 @@ precio = 50
     \textcolor{red}{print}("precio es menor que 70")
 \end{alltt}        
 \end{tcolorbox}
-\par\hspace{5pt} Ahora bien, \emph{no} es necesario colocar una solo condición en un \emph{script}; se pueden colocar 2 o más condiciones, buscando abarcar los distintos escenarios posibles.
+
+\par\hspace{5pt} Ahora bien, \emph{no} es necesario colocar una solo condición en un \emph{script}; se pueden colocar 2 o más condiciones, buscando abarcar los distintos escenarios posibles. Para ello se utliza la clausula \verb|elif|, una síntesis entre las clausulas \verb|else| e \verb|if|.
 \begin{tcolorbox}
 \begin{alltt}
 precio = 70
 \textcolor{blue}{if} precio < 70:
     \textcolor{red}{print}("precio es menor que 70")
-\textcolor{blue}{if} precio == 70:
+\textcolor{blue}{elif} precio == 70:
     \textcolor{red}{print}("precio es igual que 70")
 \end{alltt}        
 \end{tcolorbox}
-\par\hspace{5pt} Junto con una proposición \verb|if| se puede colocar una condición \verb|else| que permita, a su vez, definir un ``bloque de código'' ejecutable en caso que la condición \verb|if| sea evaluada como \verb|False|.
+\par\hspace{5pt} Junto con una proposición \verb|if| se puede colocar también una condición \verb|else| que permita, a su vez, definir un ``bloque de código'' ejecutable en caso que la condición \verb|if| sea evaluada como \verb|False|.
+\begin{tcolorbox}
+  \begin{alltt}
+  precio = 70
+  \textcolor{blue}{if} precio == 70:
+    \textcolor{red}{print}("precio es igual a  70")
+  \textcolor{blue}{else}:
+    \textcolor{red}{print}("precio es distinto que 70")
+  \end{alltt}        
+  \end{tcolorbox}
 \vspace{0.5cm}
 
 \item ¿Cuáles son los diferentes tipos de bucles en Python? ¿Por qué son útiles?
-
-  \par \hspace{5pt} En \emph{python} existen 2 grandes tipos de bucles o \emph{loops}: \emph{for} y \emph{while}\footnote{Mi respuesta en este caso se basa en el siguiente artículo:  \url{https://www.w3schools.com/python/python_for_loops.asp}.}. A veces se menciona un tercer tipo de bucle, \emph{nested loop}\footnote{Véase, por ejemplo, \url{https://www.codecademy.com/resources/docs/python/loops}.}, pero si se lo entiende como un bucle ``dentro'' de otro, no parece constituir un bucle tan básico o fundamental como los otros dos.
-
-  \begin{itemize}
-  \item Bucle \emph{while}
-
-    \par \hspace{5pt} Dicho tipo de bucle se caracteriza por ejecutar un código una y otra vez, hasta que la(s) condicion(es) especificada(s) sea(n) falsa(s). A continuación analizaremos algunos ejemplos para aclarar un poco más dicha caracterización.
-
-    \begin{tcolorbox}
-      \begin{alltt}
-        a = \textcolor{purple}{1}
-        while a < \textcolor{purple}{10}:
-            print(\textcolor{red}{"¡Hola mundo!"})
-      \end{alltt}        
-    \end{tcolorbox}
-
-    \par \hspace{5pt} Si ejecutamos este código, veremos que el programa imprimirá \emph{infinítamente} el mensaje que aparece ahí. ¿Por qué infinitamente? Básicamente, porque dicho código posee dos \emph{proposiciones} que de alguna manera no se ``cruzan'' nunca. Por un lado, una primera proposición que define el valor inicial de \verb|a| como una constante e igual a \verb|1|. Y por el otro lado, una proposición \emph{condicional} que plantea que, mientras \verb|a| sea menor que \verb|10|, se imprima el mensaje que aparece entre comillas.  Dado que \verb|a| es definida como una constante o una variable estática, es decir, que no varía su valor luego de cada bucle, \verb|a| nunca será mayor que \verb|10|, haciendo que el valor de verdad de dicha condición sea siempre verdadera.
-
-    \par \hspace{5pt} Para que no suceda lo anterior, a saber, una iteración que tienda al infinito\footnote{Claramente un \emph{script} o código que ``dé vueltas en redondo'' presenta un error.}, es necesario que el bucle cuente con lo que se llama un \emph{contador}. Aquello permite que la variable se comporte de manera dinámica, para decirlo de alguna manera, aumentando o disminuyendo después de cada bucle.
-
+\par \hspace{5pt} En \emph{python} existen 2 grandes tipos de bucles o \emph{loops}: \emph{for} y \emph{while}. A veces se menciona un tercer tipo de bucle, \emph{nested loop}\footnote{Véase, por ejemplo, \url{https://www.codecademy.com/resources/docs/python/loops}.}, pero si se lo entiende como un bucle ``dentro'' de otro, no parece constituir un bucle tan básico o fundamental como los otros dos.
+\begin{itemize}
+\item Bucle \emph{while}
+\par \hspace{5pt} Dicho tipo de bucle se caracteriza por ejecutar un código una y otra vez, hasta que la(s) condicion(es) especificada(s) sea(n) falsa(s). A continuación analizaremos algunos ejemplos para aclarar un poco más dicha caracterización.
+\begin{tcolorbox}
+\begin{alltt}
+a = \textcolor{purple}{1}
+while a < \textcolor{purple}{10}:
+  print(\textcolor{red}{"¡Hola mundo!"})
+\end{alltt}        
+\end{tcolorbox}
+\par \hspace{5pt} Si ejecutamos este código, veremos que el programa imprimirá \emph{infinítamente} el mensaje que aparece ahí. ¿Por qué infinitamente? Básicamente, porque dicho código posee dos \emph{proposiciones} que de alguna manera no se ``cruzan'' nunca. Por un lado, una primera proposición que define el valor inicial de \verb|a| como una constante e igual a \verb|1|. Y por el otro lado, una proposición \emph{condicional} que plantea que, mientras \verb|a| sea menor que \verb|10|, se imprima el mensaje que aparece entre comillas.  Dado que \verb|a| es definida como una constante o una variable estática, es decir, que no varía su valor luego de cada bucle, \verb|a| nunca será mayor que \verb|10|, haciendo que el valor de verdad de dicha condición sea siempre verdadera.
+\par \hspace{5pt} Para que no suceda lo anterior, a saber, una iteración que tienda al infinito\footnote{Claramente un \emph{script} o código que ``dé vueltas en redondo'' presenta un error.}, es necesario que el bucle cuente con lo que se llama un \emph{contador}. Aquello permite que la variable se comporte de manera dinámica, para decirlo de alguna manera, aumentando o disminuyendo después de cada bucle.
 \begin{tcolorbox}
 \begin{alltt}
 a = \textcolor{purple}{1}
@@ -70,22 +73,17 @@ while a < \textcolor{purple}{10}:
     a = a + \textcolor{purple}{1}
 \end{alltt}        
 \end{tcolorbox}
-
-    \par \hspace{5pt} Al ejecutar dicho código, veremos que la iteración se lleva a cabo en este caso solo en nueve ocasiones. ¿Por qué? Porque al incorporar un \emph{contador} en el código, en cada \emph{ciclo} del bucle la variable \verb|a| aumentará en uno, hasta el punto en que \verb|a| sea igual a \verb|10|, haciendo que la condición formulada sea falsa y, de ese modo, finalice el bucle. \\
-
-  \item Bucle \emph{for}
-    \par \hspace{5pt} Un bucle tipo \emph{for} se utiliza, a su vez, para iterar en general sobre una sequencia: lista, tuple, dictionario, conjunto y/o \emph{string}. Veámos a continuación algunos ejemplos.
-
+\par \hspace{0.5cm} Al ejecutar dicho código, veremos que la iteración se lleva a cabo en este caso solo en nueve ocasiones. ¿Por qué? Porque al incorporar un \emph{contador} en el código, en cada \emph{ciclo} del bucle la variable \verb|a| aumentará en uno, hasta el punto en que \verb|a| sea igual a \verb|10|, haciendo que la condición formulada sea falsa y, de ese modo, finalice el bucle.
+\item Bucle \emph{for}
+\par \hspace{5pt} Un bucle tipo \emph{for} se utiliza, a su vez, para iterar en general sobre una sequencia: lista, tuple, dictionario, conjunto y/o \emph{string}. Veámos a continuación algunos ejemplos.
 \begin{tcolorbox}
 \begin{alltt}
-frutas = [``manzanas'', ``peras'', ``fresas'']
+frutas = ["manzanas", "peras", "fresas"]
 \textcolor{blue}{for} x \textcolor{blue}{in} frutas:
     \textcolor{blue}{print}(x)
 \end{alltt}        
-\end{tcolorbox}    
-
+\end{tcolorbox}
 \par \hspace{5pt} Si ejecutamos dicho bucle en el terminal, veremos que se imprime hacia abajo el nombre de cada fruta incluida en el lista.
-
 \begin{tcolorbox}
 \begin{alltt}
 manzanas
@@ -97,7 +95,7 @@ fresas
 \par \hspace{5pt} Algo parecido resulta cuando intentamos realizar un bucle sobre un determinado \emph{string}.
 \begin{tcolorbox}
 \begin{alltt}
-\textcolor{blue}{for} x \textcolor{blue}{in} ``frutas'':
+\textcolor{blue}{for} x \textcolor{blue}{in} "frutas":
     \textcolor{blue}{print}(x)
 \end{alltt}        
 \end{tcolorbox}
