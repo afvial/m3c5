@@ -19,7 +19,6 @@
 
 \begin{enumerate}
 \item ¿Qué es un condicional?
-
 \par\hspace{5pt} Un condicional (\verb|if|) es un tipo de proposición que permite ejecutar un ``bloque de código'' sujeto a una determinada condición. Dicho tipo de proposiciones posee la siguiente estructura formal: si la condidición es evaluada \verb|True| entonces se ejecuta el ``bloque de còdigo'', en caso que sea \verb|False|, se ignorará el bloque (es decir, no se imprimirá nada en el terminal).  
 \begin{tcolorbox}
 \begin{alltt}
@@ -28,8 +27,7 @@ precio = 50
     \textcolor{red}{print}("precio es menor que 70")
 \end{alltt}        
 \end{tcolorbox}
-
-\par\hspace{5pt} Ahora bien, \emph{no} es necesario colocar una solo condición en un \emph{script}; se pueden colocar 2 o más condiciones, buscando abarcar los distintos escenarios posibles. Para ello se utliza la clausula \verb|elif|, una síntesis entre las clausulas \verb|else| e \verb|if|.
+\par\hspace{5pt} Ahora bien, \emph{no} es necesario colocar una sola condición en un \emph{script}; se pueden colocar 2 o más condiciones, buscando abarcar los distintos escenarios posibles. Para ello se utliza la clausula \verb|elif|, una síntesis entre las clausulas \verb|else| e \verb|if|.
 \begin{tcolorbox}
 \begin{alltt}
 precio = 70
@@ -123,7 +121,7 @@ frutas = ["manzanas", "peras", "fresas"]
 \end{alltt}        
 \end{tcolorbox}
 \par \hspace{5pt} Como se puede observar en el ejemplo anterior, para realizar dicho \rverb|break|, es necesario introducir una proposición \emph{condicional} (\bverb|if|) que señale en qué \verb|item| se realizará el quiebre. Es importante tener presente que al imprimir un bucle que incorpore un \rverb|break|, se imprimirán todos los \verb|items| o elementos justo hasta aquel que preceda o anteceda el del quiebre\footnote{
-  En sentido estricto, eso sí, aquello dependerá si la orden de impresion se encuantra antes o después de la proposición condicional.}.
+En sentido estricto, eso sí, aquello dependerá si la orden de impresion se encuentra antes o después de la proposición condicional.}.
 \par \hspace{5pt} Con la expresión \rverb|continue| es posible, a su vez, \emph{detener} la iteracion en ``curso'', para pasar a la siguente. Al igual que en el caso de \rverb|break|, es posible hacerlo para ambos tipos de bucles (\emph{for} y \emph{while}).
 \begin{tcolorbox}
 \begin{alltt}
